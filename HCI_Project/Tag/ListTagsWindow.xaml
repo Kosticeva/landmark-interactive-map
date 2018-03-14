@@ -1,0 +1,133 @@
+﻿<Window x:Class="HCI_Project.ListTagsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="Choose existing tag" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" WindowState="Normal" Icon="/HCI_Project;component/Images/17086-200.png" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background"  Value="#FF257D99"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground"  Value="#FF257D99"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomTagsCommands.NewTag1" Executed="NewTag1CommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.DeleteTag1" Executed="DeleteTag1CommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.AddTag" Executed="AddTagCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.RemoveTag" Executed="RemoveTagCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.OkTags" Executed="OkTagsCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.CancelTags" Executed="CancelTagsCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.ExitTags" Executed="ExitTagsCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagsCommands.EditTag" Executed="EditTagCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="local:CustomTagsCommands.NewTag1"></KeyBinding>
+        <KeyBinding Key="X" Modifiers="Control" Command="local:CustomTagsCommands.DeleteTag1"></KeyBinding>
+        <KeyBinding Key="V" Modifiers="Control" Command="local:CustomTagsCommands.AddTag"></KeyBinding>
+        <KeyBinding Key="Back"  Command="local:CustomTagsCommands.RemoveTag"></KeyBinding>
+        <KeyBinding Key="Enter" Modifiers="Control" Command="local:CustomTagsCommands.OkTags"></KeyBinding>
+        <KeyBinding Key="Escape" Command="local:CustomTagsCommands.CancelTags"></KeyBinding>
+        <KeyBinding Key="F4" Modifiers="Alt" Command="local:CustomTagsCommands.ExitTags"></KeyBinding>
+        <KeyBinding Key="E" Modifiers="Control" Command="local:CustomTagsCommands.EditTag"></KeyBinding>
+    </Window.InputBindings>
+    <Window.Background>
+        <ImageBrush ImageSource="/HCI_Project;component/Images/phys_world_map_.jpg" Opacity="0.2" />
+    </Window.Background>
+    <Grid Height="Auto" Width="800" Background="White" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+        <Image Source="/HCI_Project;component/Images/17086-200.png" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="11" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <TextBlock Name="Titlee" Text="Here you can find existing tags or create your own" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="11" FontSize="40" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        <TextBlock Name="Title1" Text="Existing tags" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" Margin="5" />
+        <TextBlock Name="Title2" Text="Your tags" Grid.Row="6"  Grid.Column="6" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" Grid.ColumnSpan="4" Margin="5" />
+        
+        <Button Name="NewTag" Content="New Tag" Margin="5,5,5,5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Top" Grid.RowSpan="2" Click="NewTag_OnClick" ToolTip="To add a new tag, click here." />
+        <Button Name="Delete" Content="Delete Tag" Margin="5,5,5,5" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Top" Grid.RowSpan="2" Click="DeleteTag_OnClick" ToolTip="To delete tag, select a tag from the list below and  click here." />
+        <TextBox Name="Search" Text="Search for tag" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="4" Margin="5 5 5 5" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Disabled" MaxLines="200" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" CaretBrush="White" ClipToBounds="False" AcceptsReturn="False" AcceptsTab="False"  ToolTip="To find a tag with specific name or property, enter data here." TextChanged="Go_OnClick" />
+        <DataGrid x:Name="dgrCreatedTags" Grid.Row="8" Margin="5,5,5,5" Grid.Column="1" Grid.ColumnSpan="4" ItemsSource="{Binding Path=ExistTags}" IsReadOnly="True" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" HorizontalScrollBarVisibility="Disabled" IsTextSearchEnabled="True" HorizontalGridLinesBrush="#FF257D99" VerticalGridLinesBrush="#FF257D99" BorderBrush="#FF257D99" Foreground="#FF257D99" Background="White" BorderThickness="3" MouseDoubleClick="ChangeTag_OnClick" ToolTip="Here you can see all the tags that have been created in this application." MinColumnWidth="50" MaxColumnWidth="300" MouseMove="ListView_MouseMove" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" DragEnter="Remove_DragEnter" Drop="Remove_Drop" AllowDrop="True">
+             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ID" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ID}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Color" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="{Binding Path=Color,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Description" Width="190">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dgrSelectedTags" Grid.Row="8" Margin="5,5,5,5" Grid.Column="6" Grid.ColumnSpan="4" ItemsSource="{Binding Path=MyTags}" IsReadOnly="True" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" HorizontalScrollBarVisibility="Disabled" IsTextSearchEnabled="True" HorizontalGridLinesBrush="#FF257D99" VerticalGridLinesBrush="#FF257D99" BorderBrush="#FF257D99" Foreground="#FF257D99" Background="White" BorderThickness="3" MouseDoubleClick="ChangeTag_OnClick" ToolTip="Here you can see all tags added to your landmark." MaxColumnWidth="300" MinColumnWidth="50" AllowDrop="True" MouseMove="Remove_MouseMove" PreviewMouseLeftButtonDown="Remove_PreviewMouseLeftButtonDown" DragEnter="ListView_DragEnter" Drop="ListView_Drop">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ID" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ID}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Color" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="{Binding Path=Color,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Description" Width="190">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Name="OK" Content="Accept" Margin="5,5,5,5" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="OK_OnClick" ToolTip="To save all created changes, click here." />
+        <Button Name="Cancel" Content="Cancel" Margin="5,5,5,5" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Left" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Cancel_OnClick" ToolTip="To cancel all created changes, click here." />
+    </Grid>
+</Window>
+

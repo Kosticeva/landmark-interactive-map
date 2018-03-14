@@ -1,0 +1,68 @@
+﻿<Window x:Class="HCI_Project.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="SignInWindow" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" WindowState="Normal" Icon="/HCI_Project;component/Images/17086-200.png" Closing="Window_Closing">
+    <Window.Background>
+        <ImageBrush ImageSource="/HCI_Project;component/Images/phys_world_map_.jpg" Opacity="0.2" />
+    </Window.Background>
+    <Grid Height="Auto" Width="800" Background="White" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="210" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="Title1" Text="Welcome to the" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" TextWrapping="WrapWithOverflow" Foreground="#FF055D79" FontSize="44" FontFamily="Gabriola" TextAlignment="Center" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBlock Name="Title11" Text="NATURAL HERITAGE MAP" Grid.Row="2" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="7" FontSize="80" FontWeight="Bold" FontStyle="Italic" FontFamily="Gabriola" TextTrimming="None" Opacity="1" Foreground="#FF055D79" Background="#00ECF6F8" TextAlignment="Center" ClipToBounds="False" AllowDrop="False" VerticalAlignment="Center"><TextBlock.OpacityMask><LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5"><GradientStop Color="Black" Offset="0" /><GradientStop Color="White" Offset="1" /></LinearGradientBrush></TextBlock.OpacityMask></TextBlock>
+        <TextBlock Name="Manual1" Text="Please fill in the following fields to create new account" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="3" TextWrapping="WrapWithOverflow" Foreground="#FF055D79" FontSize="44" FontFamily="Footlight MT" TextAlignment="Center" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBlock Name="Name1" Text="Username:" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBlock Name="Email1" Text="Email:" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBlock Name="Password" Text="Password:" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBox Name="UN_Field_SW" Grid.Row="7" Margin="5 5 5 5" Grid.Column="4" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" SelectionBrush="White" MaxLines="1" UndoLimit="200" SelectionOpacity="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ToolTip="Here you can enter your specific username." TextWrapping="Wrap" CaretBrush="White">
+            <TextBox.Text>
+                <Binding Path="Name_Username" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                        <local:UsernameValidation ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid Name="Grd">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="1" x:Name="textBox"/>
+                        <TextBlock Name="Info" Grid.Column="0" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" FontFamily="Segoe UI" FontSize="28" FontWeight="Bold" />
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBox Name="EM_Field_SW" Grid.Row="8" Margin="5 5 5 5" Grid.Column="4" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" UndoLimit="200" SelectionBrush="White" SelectionOpacity="1" MaxLines="1" HorizontalScrollBarVisibility="Disabled" Cursor="Arrow" AutoWordSelection="True" VerticalScrollBarVisibility="Auto" ToolTip="Here you can enter your e-mail for contact purposes." TextWrapping="Wrap" CaretBrush="White" />
+        <PasswordBox Name="PS_Field_SW" Grid.Row="9" Margin="5 5 5 5" Grid.Column="4" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" Cursor="Arrow" SelectionBrush="White" SelectionOpacity="1" ToolTip="Here you can enter your password." CaretBrush="White" />
+        <Button  Content="Accept" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="12" Margin="5 5 5 5" Grid.Column="4" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="40" Opacity="1" Padding="0" BorderThickness="0" FontWeight="Bold" Cursor="Hand" Click="OK_Click" ToolTip="To create your new account and start using Natural Heritage Map, click here." />
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="12" Margin="5 5 5 5" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="40" Opacity="1" Padding="0" BorderThickness="0" FontWeight="Bold" Cursor="Hand" ToolTip="To cancel all created changes, click here." Click="Cancel_Click" />
+        <Image Source="/HCI_Project;component/Images/17086-200.png" Grid.Row="11" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Center" />
+    </Grid>
+</Window>

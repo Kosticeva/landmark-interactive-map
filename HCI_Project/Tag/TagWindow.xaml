@@ -1,0 +1,59 @@
+﻿<Window x:Class="HCI_Project.TagWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="Tag options" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" WindowState="Normal" Icon="/HCI_Project;component/Images/17086-200.png" AllowDrop="False" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.Background>
+        <ImageBrush ImageSource="/HCI_Project;component/Images/phys_world_map_.jpg" Opacity="0.2" />
+    </Window.Background>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomTagCommands.OkTag" Executed="OkTagCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagCommands.CancelTag" Executed="CancelTagCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTagCommands.ExitTag" Executed="ExitTagCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="Enter" Modifiers="Control" Command="local:CustomTagCommands.OkTag"></KeyBinding>
+        <KeyBinding Key="F4" Modifiers="Alt" Command="local:CustomTagCommands.ExitTag"></KeyBinding>
+        <KeyBinding Key="Escape" Command="local:CustomTagCommands.CancelTag"></KeyBinding>
+    </Window.InputBindings>
+    <Grid Height="Auto" Width="800" Background="White" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="ID" Text="Tag ID:" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBlock Name="Color" Text="Tag color:"  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Top" />
+        <TextBlock Name="Description" Text="Tag description:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Top" />
+
+        <TextBox Name="TagID_Field" Text="" Grid.Row="3" Margin="5" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Disabled" MaxLines="1" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" ToolTip="Unique ID for your tag." TextWrapping="Wrap" CaretBrush="White" />
+        <TextBox Name="TagDescription_Field" Text="" Grid.Row="4" Margin="5" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Auto" MaxLines="200" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow" ClipToBounds="False" AcceptsReturn="False" AcceptsTab="False" ToolTip="Description of your tag." CaretBrush="White" />
+        <TextBlock Name="MainTitle" Text="Please fill in all information about your new tag" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="7" FontSize="44" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        <xctk:ColorPicker Name="ClrPcker_Background" Grid.Row="5" Grid.Column="3" Margin="5,5,5,5" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" ShowRecentColors="True" SelectedColor="White" Height="40" DisplayColorAndName="True" ColorMode="ColorCanvas" Grid.ColumnSpan="2" ToolTip="Color of your tag." FontFamily="Footlight MT" Foreground="#FF257D99" BorderBrush="#FF257D99" ShowStandardColors="True"></xctk:ColorPicker>
+        <Button  Content="Accept" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="9" Margin="5,5,5,5" Grid.Column="4" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="40" Opacity="1" Padding="0" BorderThickness="0" FontWeight="Bold" Cursor="Hand" Click="OK_Click" ToolTip="To save your tag, click here." />
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="9" Margin="5 5 5 5" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="40" Opacity="1" Padding="0" BorderThickness="0" FontWeight="Bold" Cursor="Hand" Click="Cancel_Click" ToolTip="To cancel all created changes, click here." />
+        <Image Source="/HCI_Project;component/Images/17086-200.png" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
+    </Grid>
+</Window>
+
+<!--="{Binding ElementName=ClrPcker_Background, UpdateSourceTrigger=PropertyChanged}"-->
+
+

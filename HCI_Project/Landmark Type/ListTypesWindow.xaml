@@ -1,0 +1,102 @@
+﻿<Window x:Class="HCI_Project.ListTypesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="Choose existing type" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" WindowState="Normal" Icon="/HCI_Project;component/Images/17086-200.png" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background"  Value="#FF257D99"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground"  Value="#FF257D99"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomTypesCommands.NewLandmarkType1" Executed="NewLandmarkType1CommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.SelectLandmarkType" Executed="SelectLandmarkTypeCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.DeleteLandmarkType" Executed="DeleteLandmarkTypeCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.EditType" Executed="EditTypeCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.OkTypes" Executed="OkTypesCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.CancelTypes" Executed="CancelTypesCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomTypesCommands.ExitTypes" Executed="ExitTypesCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="local:CustomTypesCommands.NewLandmarkType1"></KeyBinding>
+        <KeyBinding Key="V" Modifiers="Control" Command="local:CustomTypesCommands.SelectLandmarkType"></KeyBinding>
+        <KeyBinding Key="X" Modifiers="Control" Command="local:CustomTypesCommands.DeleteLandmarkType"></KeyBinding>
+        <KeyBinding Key="E" Modifiers="Control" Command="local:CustomTypesCommands.EditType"></KeyBinding>
+        <KeyBinding Key="Enter" Modifiers="Control" Command="local:CustomTypesCommands.OkTypes"></KeyBinding>
+        <KeyBinding Key="Escape" Command="local:CustomTypesCommands.CancelTypes"></KeyBinding>
+        <KeyBinding Key="F4" Modifiers="Alt" Command="local:CustomTypesCommands.ExitTypes"></KeyBinding>
+    </Window.InputBindings>
+    <Window.Background>
+        <ImageBrush ImageSource="/HCI_Project;component/Images/phys_world_map_.jpg" Opacity="0.2" />
+    </Window.Background>
+    <Grid Height="Auto" Width="800" Background="White" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/HCI_Project;component/Images/17086-200.png" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <TextBlock Name="Titlee" Text="Here you can find existing landmark types or create your own" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="8" FontSize="40" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" />
+        <TextBlock Name="LblFind" Text="Selected type:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" />
+        <TextBox Name="LTID" Text="" Grid.Row="4" Grid.Column="5" Margin="5 5 5 5" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Disabled" MaxLines="1" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" IsReadOnly="True" VerticalAlignment="Stretch" ToolTip="ID and name of the landmark type you selected for your landmark." TextWrapping="Wrap" CaretBrush="White" />
+        <TextBlock Name="SearchLbl" Text="Search:" Grid.Row="5" Grid.Column="2"  HorizontalAlignment="Right" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+        <Button Name="NewType" Content="New Type" Margin="5,5,5,5" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Top" Command="local:CustomTypesCommands.NewLandmarkType1" Grid.RowSpan="2" ToolTip="To create a new landmark type, click here." />
+        <TextBox Name="Search" Text="" Grid.Row="5" Grid.Column="5" Margin="5 5 5 5" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Disabled" MaxLines="1" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch" ToolTip="ID and name of the landmark type you selected for your landmark." TextWrapping="Wrap" TextChanged="Go_OnClick" CaretBrush="White" />
+        <DataGrid x:Name="dgrTypes" Grid.Row="7"  Margin="5,5,5,5" Grid.Column="1" Grid.ColumnSpan="8" ItemsSource="{Binding Path=ltypes}" IsReadOnly="True" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" HorizontalScrollBarVisibility="Auto" IsTextSearchEnabled="True" MouseDoubleClick="Double_OnClick" HorizontalGridLinesBrush="#FF257D99" VerticalGridLinesBrush="#FF257D99" BorderBrush="#FF257D99" Foreground="#FF257D99" Background="White" BorderThickness="3" SelectionChanged="SelectionChanged_OnClick" ToolTip="Here you can see all landmark types that have been created in this application. To edit a landmark type, double click the one you wish to change." FontFamily="Footlight MT" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ID" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ID}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Name" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Description" Width="360">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="OK" Content="Accept" Margin="5,5,5,5" Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="OK_OnClick" ToolTip="To save all created changes, click here." />
+        <Button Name="Select" Content="Select" Margin="5,5,5,5" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Command="local:CustomTypesCommands.SelectLandmarkType"  ToolTip="To select a landmark type for your landmark, select the one you wish from the list above and click here." />
+        <Button Name="Delete" Content="Delete" Margin="5,5,5,5" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Left" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Delete_OnClick" ToolTip="To delete a landmark type, select a landmark type from the list above and click here." />
+        <Button Name="Cancel" Content="Cancel" Margin="5,5,5,5" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Left" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Cancel_OnClick" ToolTip="To cancel all created changes, click here." />
+    </Grid>
+</Window>

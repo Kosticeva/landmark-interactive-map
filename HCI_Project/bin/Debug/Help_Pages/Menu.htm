@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Menu</title>
+    <style>
+      p{
+        font-size: 20px;
+        color: #055D79;
+      }
+
+      a{
+        font-size: 20px;
+        color: green;
+      }
+
+      a:hover{
+        color: #055D79;
+      }
+
+      li{
+        font-size: 20px;
+        color: #055D79;
+      }
+
+      h2{
+        font-size: 40px;
+        color: #055D79;
+      }
+
+			h4{
+        font-size: 30px;
+        color: green;
+      }
+
+			a.next{
+				font-size: 25px;
+			}
+
+      img{
+        width:25px;
+        height:25px;
+      }
+    </style>
+	</head>
+	<body>
+	    <h2>All about the Menu</h2>
+      <p>All the actions you can perform on the map are placed in the menu.</p>
+      <p>The menu contains 4 sections:
+        <ol>
+          <li><a href="Menu.htm#File">File</a></li>
+          <li><a href="Menu.htm#Edit">Edit</a></li>
+          <li><a href="Menu.htm#View">View</a></li>
+          <li><a href="Menu.htm#Help">Help</a></li>
+        </ol>
+      </p>
+
+      <a name="File"></a>
+      <h4>File</h4>
+        <p>File section contains 3 items: New, Save and Exit.</p>
+        <p><b>New</b> section has 3 options:</p>
+          <ol>
+            <li>New Landmark - opens dialog for new landmark</li>
+            <li>New Landmark Type - opens list of all created landmark types </li>
+            <li>New Tag - opens list of all created tags</li>
+          </ol>
+          <p>
+          You can use keyboard keys or toolbar options to access each of the <b>New</b> section items.
+          <b>Control+L</b> opens the New Landmark dialog (<img src='./../../../Images/17086-200.png'/>),
+          <b>Control+Y</b> opens the New Landmark Type dialog (<img src='./../../../Images/type.png'/>)
+          and <b>Control+T</b> opens the New Tag dialog (<img src='./../../../Images/tags.png'/>).</p>
+        <p><b>Save</b> option saves all the data you created. It can be
+          accessed through the menu or pressing the Control+S keys.</p>
+        <p><b>Exit</b> option is used to exit the application. When you
+          select this option, a dialog will appear and you will need to confirm
+          you want to exit. If you confirm and you haven't saved your data, another
+          dialog will appear, this time asking you if you would like to save
+          your data. If you confirm, your data will be saved and you will exit
+          the application. If you cancel, your data won't be saved and you will
+          exit the application. You can access this option through the menu
+          or pressing the <b>Alt+F4</b> keys.</p>
+
+      <a name="Edit"></a>
+      <h4>Edit</h4>
+        <p>Exit section contains 5 items: Cut, Copy, Paste, Delete and Find...</p>
+        <a name="#Controls"></a>
+        <p>Cut, Copy, Paste and Delete are controls used for manipulating
+          the placed landmark.</p>
+          <ul>
+            <li>Cut option removes the landmark from the map but
+          saves its copy on the clipoard. It can be accessed through the menu,
+          pressing the <b>Control+X</b> keys or through the toolbar option (<img src='./../../../Images/cut.png'/>).</li>
+            <li>Copy option saves the copy of the landmark on the clipboard,
+              but leaves the original landmark on the map. It can be accessed
+	            through the menu, pressing the <b>Control+C</b> keys or through
+	            the toolbar option (<img src='./../../../Images/copy-icon.png'/>).</li>
+            <li>Paste option places the copy of the landmark at the selected
+              position on the map. You can paste landmarks that you have
+              copied with Copy or Cut option. It can be accessed
+              through the menu, pressing the <b>Control+V</b> keys or through
+              the toolbar option (<img src='./../../../Images/paste.png'/>).</li>
+            <li>Delete option removes the landmark from the map. It is not copied
+              on the clipboard, but if you have copied it with Copy or Cut options,
+              you can place it again on the map. This option only deletes landmark
+              image from the map - it doesn't delete the landmark from the database.
+              This option can be accessed through the menu, pressing the <b>Delete</b> key or through
+              the toolbar option (<img src='./../../../Images/delete1600.png'/>).</li>
+          </ul>
+          <p>To use the Cut, Copy, Paste and Delete command, you must
+            first <a href="Map.htm#Select">select</a> the landmark you want to manipulate.</p>
+          <a name="List"></a>
+          <p>Find... option opens a <a href="Landmark.htm#TheList">dialog</a> with
+            all created landmarks from which you can edit, delete or place landmarks
+            on the map. You can also find any landmark you want from this dialog.
+            Find... option can be opened from the menu, pressing the <b>Control+F</b>
+            keys or through the toolbar option (<img src='./../../../Images/list1600.png'/>)</p>
+
+    <a name="Help"></a>
+     <h4>View</h4>
+      <p>View section has 2 items: Change Map and Toolbar...</p>
+      <p>Change Map option opens a dialog where you can select background
+        for your map. The selection is not remembered, so the next time you
+        log in with your account, the background map will be the default one.</p>
+      <p>Toolbar... option opens a menu with one check-box marked 'Visible', and
+        two radio butons marked 'Horizontal' and 'Vertical'. Checking the 'Visible'
+        check-box places the toolbar on the map. It is placed in the upper left corner
+        of the map. It contains 8 options: 3 for creating landmark/landmark type/tag,
+        and 5 from the 'Edit' section, used for landmark manipulation and searching
+        for landmark. </p><p>Selecting the radio buttons will change toolbar's orientation.
+        'Horizontal' will change toolbar's orientation to horizontal, if toolbar's orientation
+        until then was vertical and 'Vertical' will change toolbar's orientation from
+        horizontal to vertical. You can always hide the toolbar by unchecking the 'Visible'
+        check-box. </p>
+        <p>You can also <a href="Map.htm#DragDrop">move the toolbar around the map</a>.</p>
+
+      <a name="Help">
+      <h4>Help</h4>
+        <p>The Help section opens the index page of The Natural Heritage Map helper.
+          It can be accessed through the menu or by pressing the <b>Control+H</b>
+          keys.</p>
+
+			<a class="next" href="Map.htm">Next step</a>
+      <br />
+      <br />
+      <a href="Introduction.htm">Introduction.</a>
+			<br />
+      <a href="LogIn.htm">I already have an account.</a>
+      <br />
+      <a href="SignIn.htm">All about creating your own account.</a>
+      <br />
+      <a href="TheLandmark.htm">All about landmarks.</a>
+      <br />
+      <a href="TheLandmarkType.htm">All about landmark types.</a>
+      <br />
+      <a href="TheTag.htm">All about tags.</a>
+	</body>
+</html>

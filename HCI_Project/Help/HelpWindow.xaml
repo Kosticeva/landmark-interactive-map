@@ -1,0 +1,108 @@
+﻿<Window x:Class="HCI_Project.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="Natural Heritage Map Help" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Topmost="False" Width="{x:Static SystemParameters.FullPrimaryScreenWidth}" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" BorderBrush="#FF00009F" WindowState="Maximized" ResizeMode="NoResize" Icon="/HCI_Project;component/Images/17086-200.png">
+    <Grid Width="{x:Static SystemParameters.FullPrimaryScreenWidth}" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="#FF055D79" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock HorizontalAlignment="Left"></TextBlock>
+                <Image HorizontalAlignment="Right"></Image>
+            </StackPanel>
+            <Rectangle Grid.Row="1" Grid.Column="0" Width="0" Height="Auto" Stroke="#FF055D79" StrokeThickness="5" HorizontalAlignment="Right"></Rectangle>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TreeView>
+                    <TreeViewItem Header="Natural Heritage Map" IsExpanded="True">
+                        <TreeViewItem Header="Introduction">
+                        </TreeViewItem>
+                        <TreeViewItem Header="Log In">
+                        </TreeViewItem>
+                        <TreeViewItem Header="Sign In">
+                        </TreeViewItem>
+                        <TreeViewItem Header="The Map" IsExpanded="True">
+                            <TreeViewItem Header="Menu" IsExpanded="True">
+                                <TreeViewItem Header="File">
+                                </TreeViewItem>
+                                <TreeViewItem Header="Edit">
+                                </TreeViewItem>
+                                <TreeViewItem Header="View">
+                                </TreeViewItem>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Map" IsExpanded="True">
+                                <TreeViewItem Header="Toolbar">
+                                </TreeViewItem>
+                                <TreeViewItem Header="Background">
+                                </TreeViewItem>
+                                <TreeViewItem Header="Landmark Pins">
+                                </TreeViewItem>
+                            </TreeViewItem>
+                        </TreeViewItem>
+                        <TreeViewItem Header="The Landmark" IsExpanded="True">
+                            <TreeViewItem Header="Introduction">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Creating Landmark">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Editing Landmark">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Deleting Landmark">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Finding Landmark">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Placing Landmark">
+                            </TreeViewItem>
+                        </TreeViewItem>
+                        <TreeViewItem Header="The Landmark Type" IsExpanded="True">
+                            <TreeViewItem Header="Introduction">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Creating Landmark Type">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Editing Landmark Type">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Deleting Landmark Type">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Selecting Landmark Type">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Finding Landmark Type">
+                            </TreeViewItem>
+                        </TreeViewItem>
+                        <TreeViewItem Header="The Tag" IsExpanded="True">
+                            <TreeViewItem Header="Introduction">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Creating Tag">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Editing Tag">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Deleting Tag">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Adding Tag">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Removing Tag">
+                            </TreeViewItem>
+                            <TreeViewItem Header="Finding Tag">
+                            </TreeViewItem>
+                        </TreeViewItem>
+                    </TreeViewItem>
+                </TreeView>
+            </StackPanel>
+            <WebBrowser Name="wbHelp" Grid.Row="1" Grid.Column="1"></WebBrowser>
+            <StackPanel Background="#FF055D79" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <Button Content="Exit" Margin="5 5 5 5" Background="White" BorderBrush="White" Foreground="#FF055D79" FontFamily="Footlight MT" FontSize="40" Opacity="1"  HorizontalAlignment="Right" BorderThickness="0" HorizontalContentAlignment="Center" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" ToolTip="To create an account, click here." />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

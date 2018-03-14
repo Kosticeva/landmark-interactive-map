@@ -1,0 +1,184 @@
+﻿<Window x:Class="HCI_Project.LandmarkListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HCI_Project"
+        Title="List of all landmarks" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" WindowState="Normal" Icon="/HCI_Project;component/Images/17086-200.png" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background"  Value="#FF257D99"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground"  Value="#FF257D99"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontFamily" Value="Footlight MT"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomListCommands.EditLandmark" Executed="EditLandmarkCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomListCommands.DeleteLandmark" Executed="DeleteLandmarkCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomListCommands.OkLandmarks" Executed="OkLandmarksCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomListCommands.CancelLandmarks" Executed="CancelLandmarksCommandBinding_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomListCommands.ExitLandmarks" Executed="ExitLandmarksCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="E" Modifiers="Control" Command="local:CustomListCommands.EditLandmark"></KeyBinding>
+        <KeyBinding Key="X" Modifiers="Control" Command="local:CustomListCommands.DeleteLandmark"></KeyBinding>
+        <KeyBinding Key="Enter" Modifiers="Control" Command="local:CustomListCommands.OkLandmarks"></KeyBinding>
+        <KeyBinding Key="Escape" Command="local:CustomListCommands.CancelLandmarks"></KeyBinding>
+        <KeyBinding Key="F4" Modifiers="Alt" Command="local:CustomListCommands.ExitLandmarks"></KeyBinding>
+    </Window.InputBindings>
+    <Window.Background>
+        <ImageBrush ImageSource="/HCI_Project;component/Images/phys_world_map_.jpg" Opacity="0.2" />
+    </Window.Background>
+    <Grid Height="Auto" Width="800" Background="White" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="170" />
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="Smthing" Text="Search:" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" FontSize="32" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow" TextAlignment="Center" Margin="5" />
+        <TextBox Name="Search" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Margin="5 5 5 5" HorizontalAlignment="Stretch" FontSize="32" FontFamily="Footlight MT" Background="#FF257D99" Foreground="White" Opacity="1" AutoWordSelection="True" Cursor="Arrow" HorizontalScrollBarVisibility="Disabled" MaxLines="200" SelectionBrush="#FF055D79" SelectionOpacity="0.5" UndoLimit="200" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" CaretBrush="{x:Null}" ClipToBounds="False" AcceptsReturn="False" AcceptsTab="False" TextChanged="Go_OnClick" ToolTip="To find a landmark with specific name or property, enter data here." AllowDrop="False" />
+        <TextBlock Name="Titlee" Text="Here you can find and edit all created landmarks" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="8" FontSize="40" FontFamily="Footlight MT" Background="#00ECF6F8" Foreground="#FF055D79" Opacity="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" Margin="5" />
+        <Button Content="Columns..." Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Manage_OnClick" ToolTip="To edit col, select the one you want from the list above and click here." />
+
+        <DataGrid x:Name="dgrLandmarks" Grid.Row="5" Grid.RowSpan="7" Grid.Column="1" Grid.ColumnSpan="8" ItemsSource="{Binding Path=AvailableLandmarks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" ColumnHeaderHeight="NaN" MouseDoubleClick="Double_OnClick" ToolTip="Here you can see all created landmarks or all the landmarks that fulfill the search criteria entered above. To edit a landmark, double click the one you wish edit." MaxColumnWidth="500" MinColumnWidth="50" BorderThickness="2" Background="#00ECF6F8" MouseMove="Grid_MouseMove" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ID" Width="85">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ID}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Name" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Description" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Climate" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Climate}" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Tourist status" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=TStatus}" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Revenue" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Revenue}" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Ecologically endangered?" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=EE}" Background="White" Foreground="#FF055D79" BorderBrush="#FF003F65" Opacity="1" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Habitat of endangered species?" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=HAB}" Background="White" Foreground="#FF055D79" BorderBrush="#FF003F65" Opacity="1" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Located in urban environment?" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=URB}" Background="White" Foreground="#FF055D79" BorderBrush="#FF003F65" Opacity="1" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Date of discovery" Width="Auto" Visibility="Hidden">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePickerTextBox Text="{Binding Path=DoD}" FontFamily="Footlight MT" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="#FF055D79" Margin="5,0,0,0" IsReadOnly="True"></DatePickerTextBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Landmark Type" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=TypeView}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Image" Width="85">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Path=imagePath}" MaxWidth="75" MaxHeight="75" ></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Tags" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=TagView}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Name="OK" Content="Accept" Margin="5,5,5,5" Grid.Row="12" Grid.Column="7" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Right" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="OK_OnClick" ToolTip="To save all created changes, click here." />
+        <Button Name="Delete" Content="Delete landmark" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="10"  Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Center" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Delete_OnClick" ToolTip="To delete a landmark, select the one you want from the list above and click here." />
+        <Button Name="Cancel" Content="Cancel" Margin="5,5,0,5" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Background="#FF055D79" Foreground="White" BorderBrush="#FF003F65" FontFamily="Footlight MT" FontSize="32" Opacity="1" Padding="5" HorizontalAlignment="Left" BorderThickness="0" FontWeight="Bold" Cursor="Hand" VerticalAlignment="Center" Click="Cancel_OnClick" ToolTip="To cancel all created changes, click here." />
+        
+    </Grid>
+</Window>

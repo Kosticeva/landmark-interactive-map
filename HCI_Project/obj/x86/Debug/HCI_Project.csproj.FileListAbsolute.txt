@@ -1,0 +1,71 @@
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\bin\Debug\HCI_Project.exe
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\bin\Debug\HCI_Project.pdb
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\LandmarkTypeWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\ListTypesWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Tag\ListTagsWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Tag\TagWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\LandmarkTypeWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\ListTypesWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark\LandmarkWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Login\LoginWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Login\SignInWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Map\MapWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Tag\ListTagsWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Tag\TagWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\App.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project_MarkupCompile.cache
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project_MarkupCompile.lref
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Landmark\LandmarkWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Login\LoginWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Login\SignInWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Map\MapWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.g.resources
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.Properties.Resources.resources
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.csproj.GenerateResource.Cache
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.exe
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.pdb
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Map\DefaultMap.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Map\DefaultMap.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.exe
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.pdb
+I:\HCI_Project\HCI_Project\bin\Debug\HCI_Project.exe
+I:\HCI_Project\HCI_Project\bin\Debug\HCI_Project.pdb
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.csprojResolveAssemblyReference.cache
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Find and list\ColumnManager.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Find and list\LandmarkListWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\LandmarkTypeWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\ListTypesWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Map\DefaultMap.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Tag\ListTagsWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Tag\TagWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Find and list\ColumnManager.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Find and list\LandmarkListWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\LandmarkTypeWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark Type\ListTypesWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark\LandmarkWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Login\LoginWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Login\SignInWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Map\DefaultMap.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Map\MapWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Tag\ListTagsWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Tag\TagWindow.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\App.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project_MarkupCompile.cache
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project_MarkupCompile.lref
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Landmark\LandmarkWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Login\LoginWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Login\SignInWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\Map\MapWindow.baml
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.g.resources
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.Properties.Resources.resources
+I:\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.csproj.GenerateResource.Cache
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\List\ColumnManager.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\List\ColumnManager.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\List\LandmarkListWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\List\LandmarkListWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Help\HelpWindow.g.cs
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\Help\HelpWindow.baml
+C:\Users\Jelena\Desktop\Fakultet\6. semestar\HCI\HCI_Project\HCI_Project\obj\x86\Debug\HCI_Project.csprojResolveAssemblyReference.cache
